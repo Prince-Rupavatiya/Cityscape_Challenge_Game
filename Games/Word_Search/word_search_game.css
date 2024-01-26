@@ -1,0 +1,495 @@
+body
+{
+    background-image: url("WordSearchImage/background.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    background-attachment: fixed;
+}
+
+#word_search_first_page{
+    width:90%;
+    height: 20%;
+    padding-left:2% ;
+    font-size:larger;
+    color: snow;
+    text-shadow:2px 2px navy;
+    font-weight: bolder;
+    word-wrap: break-word;
+    margin-left: 4%;
+    border-radius: 3%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',  Verdana, sans-serif;
+    display:block;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.word_search_about
+{
+    width:90%;
+    height: 20%;
+    padding-left:2% ;
+    font-size:larger;
+    color: snow;
+    text-shadow:2px 2px navy;
+    font-weight: bolder;
+    word-wrap: break-word;
+    margin-left: 4%;
+    border:4px solid brown;
+    border-radius: 3%;
+    background-color: rgba(3, 1, 20, 0.7);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',  Verdana, sans-serif;
+    display:block;
+}
+
+.word_search_game_button
+{
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #747ce9;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: x-large;
+    font-family: monospace;
+    padding: 2%;
+    width: 20%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 1%;
+}
+  
+.word_search_game_button:hover
+{
+    background-color: rgb(244, 248, 253);
+    color:rgb(82, 99, 248);
+    font-weight: bolder;
+    border:6px double darkblue;
+}
+
+
+.container
+{
+    width:820px;
+    height:680px;
+    margin:0px auto;
+    padding-top: 10px;   
+    padding-left: 10px;   
+    background-color: rgba(3, 1, 20, 0.7);
+    border-radius: 3%;
+    display: none;
+}
+
+#hint
+{
+    width:160px;
+    height: 430px;
+    float:left;
+    text-align: center;
+    font-size:medium;
+    color: snow;
+    margin-left: 6px; 
+    margin-top: 8%; 
+    text-shadow:2px 2px navy;
+    font-weight: bolder;
+    word-wrap: break-word;
+    border:4px solid brown;
+    border-radius: 5%;
+    background-color: rgba(112, 131, 223, 0.3);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',  Verdana, sans-serif;
+}
+
+
+#letters
+{
+    width:600px;
+    height:600px;
+    margin-top: 8%; 
+    float:right;
+}
+.individual
+{
+    width:40px;
+    height:40px;
+    float:left;
+    border:2px solid  rgb(199, 199, 255);
+    border-radius: 6px;
+    text-align: center;
+    margin: 3px;
+    color: snow;
+    font-size:larger;
+    font-weight: bolder;
+    word-wrap: break-word;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',  Verdana, sans-serif;
+    cursor: pointer;
+}
+#word_search_name
+{
+    color: white;
+    text-align: center;
+    font-size:50px;
+    font-weight: bolder;
+    word-wrap: break-word;
+    font-family:Arial, Helvetica, sans-serif;
+    text-shadow: 2.5px 2.5px rgb(100, 161, 218);
+    position:static;
+}
+
+.done
+{
+    text-decoration: line-through;
+}
+.colorPurple
+{
+    background-color:palevioletred;
+    color: purple;
+}
+.correctlySelected
+{
+    background-color: lightskyblue;
+    color:navy;
+}
+#message
+{
+    color:rgb(191, 196, 242);
+}
+#nextLevel
+{
+    display: none;
+}
+
+.word_search_game_button
+{
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #747ce9;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: x-large;
+    font-family: monospace;
+    padding: 2%;
+    width: 20%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 1%;
+}
+
+
+.word_search_game_button:hover
+{
+   
+    background-color: rgb(244, 248, 253);
+    color:rgb(82, 99, 248);
+    font-weight: bolder;
+    border:6px double darkblue;
+}
+
+#word_search_score_div
+{    
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: absolute;
+    left: 50%;
+    top: 0%;
+}
+
+
+/* Media Queries */
+
+@media (max-width:800px){
+    *
+    {
+        font-size:small;
+    }
+    .container
+    {
+        width:520px;
+        height:520px;
+        padding-top: 0px;   
+        padding-left: 0px; 
+    }   
+    #hint
+    {
+        width:70px;
+        height: 350px;
+        float:left;
+        text-align: center;
+        font-size:smaller;
+    }
+    #letters
+    {
+        width:420px;
+        height:420px;
+        float:right;
+    }
+    .individual
+    {
+        width:25px;
+        height:25px;
+        float:left;
+        border:2px solid  rgb(199, 199, 255);
+        font-size:small;
+        font-weight: bolder;
+    }
+    .word_search_game_button
+    {
+        display: inline-block;
+        width: 15%;
+        font-size: medium;
+    }
+    #word_search_name
+    {
+        font-size: larger;
+    }
+    #score,#highscore
+    {
+        font-size: x-small;
+    }
+}
+
+
+@media (max-width:700px){
+    *
+    {
+        font-size: small;
+    }
+    .container
+    {
+        width:520px;
+        height:479px;
+        padding-top: 0px;   
+        padding-left: 0px; 
+    }
+    #hint
+    {
+        width:70px;
+        height: 350px;
+        float:left;
+        text-align: center;
+        font-size:smaller;
+    }
+    #letters
+    {
+        width:420px;
+        height:440px;
+        float:right;
+    }
+    .individual
+    {
+        width:25px;
+        height:25px;
+        float:left;
+        border:2px solid  rgb(199, 199, 255);
+        font-size:small;
+        font-weight: bolder;
+    }
+    .word_search_game_button
+    {
+        display: inline-block;
+        width: 15%;
+    }
+    #score,#highscore
+    {
+        font-size: x-small;
+    }
+
+}
+
+
+@media (max-width:600px){
+    *
+    {
+        font-size: small;
+    }
+    .container
+    {
+        width:520px;
+        height:480px;
+        padding-top: 0px;   
+        padding-left: 0px; 
+    }    
+    #hint
+    {
+        width:70px;
+        height: 350px;
+        float:left;
+        text-align: center;
+        font-size:smaller;
+    }
+    #letters
+    {
+        width:420px;
+        height:420px;
+        float:right;
+    }
+    .individual
+    {
+        width:25px;
+        height:25px;
+        float:left;
+        border:2px solid  rgb(199, 199, 255);
+        font-size:small;
+        font-weight: bolder;
+    }
+    .word_search_game_button
+    {
+        display: inline-block;
+        width: 15%;
+    }
+    #score,#highscore
+    {
+        font-size: x-small;
+    }
+}
+
+@media (max-width:400px){
+    *
+    {
+        margin: 0px;
+        padding: 0%;
+        font-size: smaller;
+    }
+    #word_search_first_page{
+        position: absolute;
+        top:40%;
+        height:25%;
+    }
+    #word_search_name
+    {
+        font-size: large;
+    }
+    .container
+    {
+        width:272px;
+        height:298px;
+        padding-top: 0px;   
+        padding-left: 0px; 
+       
+    }
+    #hint
+    {
+        width:80px;
+        height: 170px;
+        position: absolute;
+        top:45%;
+        float:left;
+        text-align: center;
+        font-size:small;
+    
+    }
+    #letters
+    {
+        width:280px;
+        height:320px;
+        float: left;
+    }
+    .individual
+    {
+        width:15px;
+        height:15px;
+        float:left;
+        border:0.25px solid  rgb(199, 199, 255);
+        font-size:x-small;
+        font-weight: bolder;
+    }
+    .word_search_game_button
+    {
+        display: inline-block;
+        width: 18%;
+        font-size: x-small;
+    }
+    #nextLevel
+    {
+        position: absolute;
+        top:60%;
+        left:40%;
+    }
+    #ctrlKey
+    {
+        position: absolute;
+        top:60%;
+        left:60%;
+    }
+    #score,#highscore
+    {
+        font-size: x-small;
+    }
+}
+
+@media (max-width:300px){
+    *
+    {
+        margin: 0px;
+        padding: 0%;
+        font-size: smaller;
+    }
+    #word_search_first_page{
+        position: absolute;
+        top:30%;
+        height: 171px;
+        width:215px;
+    }
+    #word_search_name
+    {
+        font-size: large;
+    }
+    .container
+    {
+        width:272px;
+        height:314px;
+        padding-top: 0px;   
+        padding-left: 0px; 
+    }    
+    #hint
+    {
+        width:80px;
+        height: 170px;
+        position: absolute;
+        top:47%;
+        float:left;
+        text-align: center;
+        font-size:small;
+    
+    }
+    #letters
+    {
+        width:280px;
+        height:314px;
+        float: left;
+    }
+    .individual
+    {
+        width:15px;
+        height:15px;
+        float:left;
+        border:0.25px solid  rgb(199, 199, 255);
+        font-size:x-small;
+        font-weight: bolder;
+    }
+    .word_search_game_button
+    {
+        display: inline-block;
+        width: 18%;
+        font-size: x-small;
+    }
+    #nextLevel
+    {
+        position: absolute;
+        top:60%;
+        left:40%;
+    }
+    #ctrlKey
+    {
+        position: absolute;
+        top:60%;
+        left:60%;
+    }
+    #score,#highscore
+    {
+        font-size: x-small;
+    }
+}

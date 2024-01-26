@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terrific Traffic Racer</title>
+    <link rel="icon" type="image/x-icon" href="terrificTrafficRacerComponents/Terrific Traffic Racer.png">
+    <link rel="stylesheet" href="traffic_game.css">
+</head>
+
+<body>
+
+    <audio id="accident_music">
+        <source src="terrificTrafficRacerComponents/accident_music.mp4" type="audio/mp4">
+    </audio>
+
+
+    <div id="front_page">
+        <button onclick="play()" id="play_button" class="front_pageButton">
+            Play
+        </button>
+        <button onclick="setting()" id="setting_button" class="front_pageButton">
+            Settings
+        </button>
+    </div>
+    
+    <div id="setting_page">
+        <img src="terrificTrafficRacerComponents/close.png" id="close_button">
+        <img src="terrificTrafficRacerComponents/mute.png" class="music_control" id="mute_music">
+        <img src="terrificTrafficRacerComponents/play.png" class="music_control" id="play_music">
+    </div>
+
+    <div id="game_page">
+        <div class="box">
+            <div id="arrowBut">
+                <img src="terrificTrafficRacerComponents/LeftKey.png" id="Left_Key" class="Arrow_key">
+                <img src="terrificTrafficRacerComponents/RightKey.png" id="Right_Key" class="Arrow_key">
+            </div>
+            <img src="terrificTrafficRacerComponents/road1.jpg" id="road">
+            <img src="terrificTrafficRacerComponents/car.png" id="car_orange" class="car">
+            <img src="terrificTrafficRacerComponents/car_red.png" id="car_red" class="car">
+            <img src="terrificTrafficRacerComponents/car_blue.png" id="car_blue" class="car">
+            <img src="terrificTrafficRacerComponents/car_yellow.png" id="car_yellow" class="car">
+            <img src="terrificTrafficRacerComponents/car_green.png" id="car_green" class="car">
+            <div id="tree_div">
+
+                <img src="terrificTrafficRacerComponents/tree.png" id="tree1" class="tree">
+                <img src="terrificTrafficRacerComponents/tree.png" id="tree2" class="tree">
+                <img src="terrificTrafficRacerComponents/tree.png" id="tree3" class="tree">
+                <img src="terrificTrafficRacerComponents/tree.png" id="tree4" class="tree">
+                <img src="terrificTrafficRacerComponents/tree.png" id="tree5" class="tree">
+                <img src="terrificTrafficRacerComponents/tree.png" id="tree6" class="tree">
+                
+
+            </div>
+        </div>
+       
+        <div id="write">
+            <h2 id="display_hscore" class="display_score">
+                High Score :
+            </h2>
+            <h2 id="score" class="display_score">
+                SCORE : 0
+            </h2>
+        </div>
+       
+        
+        <div id="score_page">
+            <h1 id="gameover" class="insideScorePage"> Game Over</h1>
+            <h2 id="highscore" class="insideScorePage"></h2>
+            <h2 id="yourscore" class="insideScorePage"></h2>
+            <button id="restart_button" class="insideScorePage scorePage_button">
+                Restart
+            </button>
+            <button id="main_menu" class="insideScorePage scorePage_button">
+                Main Menu
+            </button>
+    
+        </div>
+       
+       
+    </div>
+
+  
+   
+</body>
+<script src="traffic_game.js"></script>
+
+</html>

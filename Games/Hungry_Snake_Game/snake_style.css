@@ -1,0 +1,352 @@
+*{
+    padding: 0%;
+    margin: 0%; 
+}
+
+body{
+    /* background-color: palegreen; */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+canvas{
+    display: none;
+}
+
+#snake_game_name{
+    font-family: 'Courier New', Courier, monospace;
+    color:white;
+    font-size: 600%;
+    position: absolute;
+    top: 5%;
+    left: 23%;
+    animation: SnakeAnimation 0.5s infinite alternate;
+    
+}
+@keyframes SnakeAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-40%);
+    }
+}
+
+#snake_first_page{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    background: url('snake_game/snake_game.jpg') center center/cover;
+    background-repeat: no-repeat;
+}
+
+#snake_exit_button,
+.snake_game_button
+{
+    border: 6px double rgb(234, 84, 84);
+    border-radius: 20%;
+    padding: 1% 1%;
+    font-size: 140%;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 30px 0px;
+    width: 230px;
+    background-color: rgb(219, 109, 127);
+    color: rgb(226, 218, 218);
+    position: absolute;
+    border-color: rgb(128, 0, 0);
+    left: 75%;
+}
+
+#snake_exit_button:hover,
+.snake_game_button:hover
+{
+    background-color: rgb(249, 158, 172);
+    color:brown;
+    border-color: rgb(100, 47, 9);
+    transform: scale(1.1, 1.1);
+}
+
+#snake_game_start{
+    top:50%;
+}
+
+#snake_game_about{
+    top:60%;
+}
+
+#snake_game_setting{
+    top:70%;
+}
+
+#snake_game_quit{
+    top:80%;
+}
+
+.snake_setting_r,
+.snake_about_r{
+    width: 30%;
+    height: 45%;
+    background-color: rgb(244, 58, 58);
+    color: white;
+    opacity: 78%;
+    position: absolute;
+    top: 22.5%;
+    left: 35%;
+    box-shadow: 0 30px 40px rgba(240, 139, 139, 0.6), 0 23px 13px rgba(240, 139, 139, 0.6);
+}
+
+.exit_button{
+    border: 6px double rgb(245, 214, 214);
+    border-radius: 20%;
+    padding: 1% 1%;
+    font-size: 140%;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 30px 0px;
+    width: 60%;
+    height: 20%;
+    background-color: rgb(74, 3, 15);
+    color: rgb(226, 218, 218);
+    border-color: rgb(243, 127, 127);
+}
+
+.exit_button:hover
+{
+    background-color: rgb(249, 158, 172);
+    color:brown;
+    border-color: rgb(100, 47, 9);
+    transform: scale(1.1, 1.1);
+}
+
+#on_music{
+    margin-top: 50px;
+    height: 40%;
+    width: 40%;
+    padding-right: 3%;
+    top: 10%;
+    left: 0%;
+}
+
+#off_music{
+    margin-top: 50px;
+    height: 40%;
+    width: 40%;
+    padding: 0%;
+    top: 10%;
+    left: 60%;
+}
+
+#on_music:hover,
+#off_music:hover{
+    transform: scale(1.1);
+}
+
+.snake_about,
+.snake_setting,
+.snake_quit,
+.snake_button{
+    display: none;
+}
+
+#snake_UpKey_button{
+    position: absolute;
+    top: 75%;
+    left: 45%;
+    width: 10%;
+    height: 10%;
+    opacity: 0.6;
+}
+
+#snake_DownKey_button{
+    position: absolute;
+    top: 85%;
+    left: 45%;
+    width: 10%;
+    height: 10%;
+    opacity: 0.6;
+}
+
+
+#snake_LeftKey_button{
+    position: absolute;
+    top: 85%;
+    left: 35%;
+    width: 10%;
+    height: 10%;
+    opacity: 0.6;
+}
+
+#snake_RightKey_button{
+    position: absolute;
+    top: 85%;
+    left: 55%;
+    width: 10%;
+    height: 10%;
+    opacity: 0.6;
+}
+
+#snake_UpKey_button:hover,
+#snake_DownKey_button:hover,
+#snake_LeftKey_button:hover,
+#snake_RightKey_button:hover{
+    opacity: 1;
+}
+
+#snake_exit_button{
+    left: 40%;
+    top: 50%;
+}
+
+@media (max-width : 600px){
+
+    #snake_game_name{
+        font-size: 250%;
+        top: 5%;
+        left: 10%;
+        
+    }
+
+    .snake_game_button{
+        font-size: 170%;
+        left: 20%;
+    } 
+    
+    .snake_about_r{
+        width: 80%;
+        height: 100%;
+        font-size: 90%;
+        left: 10%;
+        height: 50%;
+    }
+
+    #snake_game_start{
+        top:50%;
+    
+    }
+    
+    #snake_game_about{
+        top:60%;
+    }
+    
+    #snake_game_setting{
+        top:70%;
+    }
+    
+    #snake_game_quit{
+        top:80%;
+    }
+
+    .snake_setting{
+        width: 80%;
+        left: 10%;
+    }
+
+    #snake_UpKey_button{
+        width: 15%;
+        left: 42.5%;
+    }
+    
+    #snake_DownKey_button{
+        width: 15%;
+        left: 42.5%;
+    }
+    
+    #snake_LeftKey_button{
+        width: 15%;
+        left: 27.5%;
+    }
+    
+    #snake_RightKey_button{
+        width: 15%;
+        left: 57.5%;
+    }
+    
+    #snake_exit_button{
+        font-size: 150%;
+        left: 25%;
+        width: 50%;
+    }
+}
+
+@media (max-width : 300px){
+    .snake_game_button{
+        font-size: 170%;
+        left: 9%;
+    }  
+}
+
+@media (max-height : 600px){
+
+    #snake_game_name{
+        font-size  : 400%;
+        top: 5%;
+        left: 15%;  
+    }
+
+    .snake_game_button{
+        font-size: 170%;
+        left: 60%;
+    } 
+    
+    .snake_about_r{
+        width: 80%;
+        height: 80%;
+        font-size: 100%;
+        left: 10%;
+        top:10%
+    }
+
+    #snake_game_start{
+        top:22%;
+    }
+    
+    #snake_game_about{
+        top:38%;
+    }
+    
+    #snake_game_setting{
+        top:54%;
+    }
+    
+    #snake_game_quit{
+        top:70%;
+    }
+
+    #snake_UpKey_button{
+        height: 15%;
+        top: 65%;
+        left: 70%;
+    }
+    
+    #snake_DownKey_button{
+        height: 15%;
+        top: 80%; 
+        left: 70%;
+    }
+    
+    #snake_LeftKey_button{
+        height: 15%;
+        top: 80%;
+        left: 60%;
+    }
+    
+    #snake_RightKey_button{
+        height: 15%;
+        top: 80%;
+        left: 80%;
+    }
+
+    #snake_exit_button{
+        font-size: 150%;
+        left: 40%;
+        width: 20%;
+    }
+}

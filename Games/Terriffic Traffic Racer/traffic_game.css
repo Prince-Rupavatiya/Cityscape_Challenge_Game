@@ -1,0 +1,532 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#front_page{
+    height: 100%;
+    width: 100%;
+    background: url('terrificTrafficRacerComponents/front_page.png') center center/cover;
+
+}
+
+.front_pageButton {
+    position: fixed;
+    color: black;
+    font-size: 200%;
+    width: 130px;
+    padding: 10px 5px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(6, 4, 1, 0.8);
+    background-color: rgb(178, 178, 178);
+}
+
+#play_button {
+    top: 73%;
+    left: 4%;
+}
+
+#setting_button {
+    top: 85.5%;
+    left: 4%;
+}
+
+#play_button:hover,
+#setting_button:hover,
+#restart_button:hover,
+#main_menu:hover,
+.music_control:hover,
+#close_button:hover {
+    transition: transform 0.3s ease;
+    transform: scale(1.2);
+}
+
+#setting_page {
+    position: absolute;
+    background-color: rgb(178, 178, 178);
+    opacity: 0.9;
+    border-radius: 20px;
+    height: 200px;
+    width: 250px;
+    box-shadow: 10px 10px 15px rgba(6, 4, 1, 1);
+    display: none;
+}
+
+.music_control {
+    position: relative;
+    height: 40%;
+    width: 30%;
+    margin-left: 3%;
+    top: 50%;
+}
+
+#close_button {
+    position: relative;
+    left: 80%;
+    top: -10%;
+    height: 21%;
+    width: 15%;
+}
+
+#game_page {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    display: none;
+    overflow: hidden;
+    background: url('terrificTrafficRacerComponents/grass.png') center center/cover;
+}
+
+#game_page > .box{ 
+    overflow: hidden;
+}
+
+.tree {
+    position: absolute;
+    left: 15%;
+    height: 30%;
+    width: 15%;
+}
+
+#tree1 {
+    top: -30%;
+    animation: tree1 3s linear infinite;
+}
+
+#tree2 {
+    top: -30%;
+    animation: tree2 3s linear infinite;
+    animation-delay: 1s;
+}
+
+#tree3 {
+    top: -30%;
+    animation: tree3 3s linear infinite;
+    animation-delay: 2s;
+}
+
+#tree4 {
+    top: -30%;
+    left: 70%;
+    animation: tree1 3s linear infinite;
+}
+
+#tree5 {
+    top: -30%;
+    left: 70%;
+    animation: tree2 3s linear infinite;
+    animation-delay: 1s;
+}
+
+#tree6 {
+    top: -30%;
+    left: 70%;
+    animation: tree3 3s linear infinite;
+    animation-delay: 2s;
+}
+
+@keyframes tree1 {
+    0% {
+        top: -30%;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes tree2 {
+    0% {
+        top: -30%;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes tree3 {
+    0% {
+        top: -30%;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+#road {
+    top: -1100%;
+    left: 33%;
+    height: 1200vh;
+    width: 35%;
+    position: absolute;
+    animation: roadanimation 10s linear infinite;
+}
+
+@keyframes roadanimation {
+    0% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(50%);
+    }
+}
+
+#write {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    font-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.display_score {
+    text-align: center;
+    background-color: rgba(245, 222, 179, 0.897);
+    color: green;
+    border-radius: 20px;
+    width: 200px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+#score_page{
+  
+    background-color: rgb(41, 27, 6);
+    z-index: 1;
+    border-radius: 10%;
+    height: 70%;
+    width: 50%;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.9);
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.insideScorePage {
+    position: relative;
+    text-align: center;
+    color: wheat;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#gameover {
+    top: 10%;
+    font-size: 330%;
+}
+
+#highscore {
+    top: 30%;
+    font-size: 180%;
+}
+
+#yourscore {
+    top: 10%;
+    font-size: 180%;
+}
+
+.scorePage_button {
+    color: #9a4933;
+    background-color: wheat;
+    opacity: 0.75;
+    border-radius: 10%;
+    box-shadow: 4px 4px 10px wheat;
+    border: 3px solid wheat;
+    height: 15%;
+    width: 50%;
+    left: 25%;
+    font-weight: 800;
+    font-size: 130%;
+}
+
+#restart_button {
+    top: 30%;
+}
+
+#main_menu {
+    top: 35%;
+}
+
+
+#score_number {
+    font-size: 120%;
+    position: ab;
+}
+
+#car_blue {
+    position: absolute;
+    height: 17%;
+    width: 5%;
+    left: 60%;
+    top: -10%;
+    padding: 0%;
+}
+
+#car_orange {
+    position: absolute;
+    height: 18.2%;
+    width: 4.8%;
+    left: 36%;
+    top: -15%;
+}
+
+#car_red {
+    position: absolute;
+    height: 18%;
+    width: 5%;
+    left: 50%;
+    top: 80%;
+
+}
+
+#car_yellow {
+    position: absolute;
+    height: 19%;
+    width: 5%;
+    left: 45%;
+    top: -10%;
+}
+
+#car_green {
+    position: absolute;
+    height: 19%;
+    width: 5.5%;
+    left: 53%;
+    top: -10%;
+
+}
+
+@keyframes car {
+    0% {
+        top: -100%;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+.car{
+    transition: left .1s;
+}
+
+
+#arrowBut{
+    display: block;
+}
+
+
+
+#Left_Key,
+#Right_Key{
+    position: absolute;
+    z-index: 6000;
+    top: 70%;
+    height: 10%;
+    width: 7%; 
+}
+
+#Left_Key{
+    left: 5%;
+}
+
+#Right_Key{
+    left:85%;
+}
+
+@media (max-width : 500px){
+    #gameover{
+      font-size: 50px;
+      top: 0%;
+    }
+    #yourscore{
+        top: 8%;
+    }
+    #highscore{
+        top: 5%;
+    }
+    #score_page{
+        width: 70%;
+        height: 60%;
+    }
+    #restart_button{
+        top: 10%;
+    }
+    #main_menu{
+        top: 15%;
+    }
+
+    #road {
+        left: 15%;
+        width: 70%;
+    }
+
+    #tree1{
+        left: 0%;
+    }
+
+    #tree2{
+        left: 0%;
+
+    }
+  
+    #tree3{
+        left: 0%;
+
+    }
+
+    #tree6{
+        left: 85%;
+    }
+    #tree5{
+        left: 85%;
+
+    }
+    #tree4{
+        left: 85%;
+
+    }
+
+    #car_blue {
+        height: 17%;
+        width: 10%;
+        left: 70%;
+    }
+    
+    #car_orange {
+        height: 18.2%;
+        width: 10%;
+        left: 20%;
+    }
+    
+    #car_red {
+        height: 18%;
+        width: 10%;    
+    }
+    
+    #car_yellow {
+        height: 19%;
+        width: 10%;
+        left: 35%;
+    }
+    
+    #car_green {
+        height: 19%;
+        width: 10%;
+        left: 55%;
+    }
+
+    /* #arrowBut{
+        display: block;
+    } */
+}
+
+@media (max-height : 450px){
+
+    #score_page{
+       width: 60%;
+       height: 90%;
+    }
+    #play_button{
+        top: 55%;
+    }
+    #setting_button{
+        top: 78%;
+    }
+    #gameover{
+        top: 0%;
+    }
+    #restart_button{
+        top: 10%;
+    }
+    #main_menu{
+        top: 15%;
+    }
+    #highscore{
+        top: 8%;
+    }
+    #yourscore{
+        top: 10%;
+    }
+    #road {
+        left: 15%;
+        width: 70%;
+    }
+
+    #tree1{
+        left: 0%;
+    }
+
+    #tree2{
+        left: 0%;
+
+    }
+  
+    #tree3{
+        left: 0%;
+
+    }
+ 
+    #tree6{
+        left: 85%;
+    }
+    #tree5{
+        left: 85%;
+
+    }
+    #tree4{
+        left: 85%;
+
+    }
+
+    #car_blue {
+        height: 17%;
+        width: 10%;
+        left: 70%;
+    }
+    
+    #car_orange {
+        height: 18.2%;
+        width: 10%;
+        left: 20%;
+    }
+    
+    #car_red {
+        height: 18%;
+        width: 10%;    
+    }
+    
+    #car_yellow {
+        height: 19%;
+        width: 10%;
+        left: 35%;
+    }
+    
+    #car_green {
+        height: 19%;
+        width: 10%;
+        left: 55%;
+    }
+
+    /* #arrowBut{
+        display: block;
+    } */
+   
+}

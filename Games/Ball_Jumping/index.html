@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Ball</title>
+    <link rel="icon" type="image/x-icon" href="component/Bouncing Ball.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="frontContainer" id="frontContainer">
+        <p id="title">Bouncing Ball</p>
+        <div class="frontBox">
+            <button id="play">Play</button>
+            <button id="setting">Settings</button>
+            <button id="about">About</button>
+        </div>
+    </div>
+
+    <div class="settingContainer" id="settingContainer">
+        <img src="component/closeicon.png" alt="" id="closeimage">
+        <p class="label">Setting</p>
+
+        <img src="component/soundimage.png" alt="" id="onsoundimage" class="iconimage">
+        <img src="component/nosoundimage.png" alt="" id="offsoundimage" class="iconimage">
+    </div>
+
+    <div class="aboutContainer" id="aboutContainer">
+        <img src="component/closeicon.png" alt="" id="closeAboutImage">
+
+        <p class="label">About</p>
+        <p id="hgscore"></p>
+        <p id="desc">How To play : </p>
+        <ul>
+            <li>
+                <p>Press any Key on keyboard to jump.</p>
+            </li>
+            <li>
+                <p>Click on screen to jump.</p>
+            </li>
+        </ul>
+    </div>
+
+
+
+    <div class="container" id="container">
+
+        <div class="msgContainer" id="msgContainer">
+            <p id="msg"></p>
+            <p id="highscore"></p>
+            <p id="score">Your Score : 0</p>
+        </div>
+        <div class="box" id="box1">
+            <div id="player" class="player"></div>
+            <div id="object1" class="object"></div>
+            <div id="object2" class="object"></div>
+            <div id="object3" class="object"></div>
+            <div id="object4" class="object"></div>
+        </div>
+        <div class="box" id="box2">
+
+        </div>
+    </div>
+
+    <div class="scoreContainer" id="scoreContainer">
+        <p id="scoreTitle">Game over</p>
+        <p id="scoreContainerHighScore">High Score : 000000000004445</p>
+        <p id="scoreContainerScore">Score : 450000000000</p>
+        <img src="component/restart.png" id="restartIcon">
+        <img src="component/home.png" id="homeIcon">
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

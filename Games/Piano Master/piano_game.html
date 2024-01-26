@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano Master</title>
+    <link rel="icon" type="image/x-icon" href="Image/Piano Master.png">
+    <link rel="stylesheet" href="piano_game.css">
+</head>
+<body>
+
+    <div id="piano_tiles_first_page">
+
+            <svg viewBox="0 0 1500 300">
+              <symbol id="s-text">
+                <text text-anchor="middle" x="50%" y="80%">PIANO MASTER</text>
+              </symbol>
+          
+              <g class = "g-ants">
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+              </g>
+            </svg>
+
+        <button id="piano_tiles_game_start" class="piano_tiles_game_button">Start Game</button>
+        <button id="piano_tiles_game_about" class="piano_tiles_game_button">About Us</button>
+        <button id="piano_tiles_game_setting" class="piano_tiles_game_button">settings</button>
+        <button id="piano_tiles_game_quit" class="piano_tiles_game_button">Quit</button>
+
+    </div>
+    <div class="piano_tiles_about piano_tiles_about_r">
+
+        <h1>About Us:</h1>
+
+        <h2>how to play :</h2>
+
+        <h3>Tap on the tiles as they appear from the top of the screen while avoiding the background area.
+          Be precise while clicking on the tiles and try to be the master of the game!</h3>
+        <button class="exit_button">EXIT</button>
+
+    </div>
+
+
+    <div class="piano_tiles_setting piano_tiles_setting_r">
+        <img src="Image/on.png" id="on_music" class="piano_tiles_music">
+        <img src="Image/off.png" id="off_music" class="piano_tiles_music">
+        
+        <button class="exit_button">EXIT</button>
+    </div>
+
+    <div>
+      <button id="piano_tiles_exit_button" class="piano_tiles_button">EXIT</button>
+    </div>
+    
+    <canvas id="piano_tiles_game"></canvas>
+    <script src="piano_game.js"></script>
+</body>
+</html>

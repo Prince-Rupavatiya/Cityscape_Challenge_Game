@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd One Out</title>
+    <link rel="icon" type="image/x-icon" href="oddOneOutComponents/Odd One Out.png">
+    <link rel="stylesheet" href="odd_one_out.css">
+</head>
+
+<body>
+
+    <div id="front_page">
+        <img src="oddOneOutComponents/logo.png" id="logo">
+        <button id="play_button">
+            PLAY
+        </button>
+        <button id="about_button">
+            ABOUT
+        </button>
+        <div id="aboutBox">
+            <img src="oddOneOutComponents/oddOneOutCloseButton.png" alt="" id="oddOneOutCloseButton">
+            <h1 id="about1" class="insideAboutDiv">Levels : 20</h1>
+            <h1 id="about2" class="insideAboutDiv">Time-Limit : 15sec</h1>
+
+            <h2 id="about3" class="insideAboutDiv">Game Play : </h2>
+            <p id="about_par" class="insideAboutDiv" >You will have 15 second to complete each levels, after 15 seconds
+                you have to restart the current level .</p>
+        </div>
+    </div>
+
+
+    <div id="game_page">
+        <audio controls id="clickSound">
+            <source src="oddOneOutComponents/click_sound.m4a" type="audio/mp4">
+        </audio>
+
+        <audio autoplay loop id="background_audio">
+            <source src="oddOneOutComponents/background_audio.mp4" type="audio/mp4">
+        </audio>
+
+        <video autoplay muted loop id="background_video">
+            <source src="oddOneOutComponents/div_background.mp4" type="video/mp4">
+        </video>
+
+        <img src="oddOneOutComponents/oddOneOutMute.png" id="oddOneOutMute" class="music">
+        <img src="oddOneOutComponents/oddOneOutPlay.png" id="oddOneOutPlay" class="music">
+
+        <p id="word"></p>
+
+        <div id="gameTitleDiv">
+            <h1 id="gameTitle">Find the <span><img src="oddOneOutComponents/circle.png" id="circle"></span>dd one out</h1>
+            <h1 id="level">Level 1</h1>
+        </div>
+       
+        <div id="main_div">
+            
+            <div id="button_div">
+                <button id="start" class="button" onclick="start()">
+                    start
+                </button><br>
+                <button id="next" class="button" onclick="next()">
+                    next
+                </button><br>
+                <button id="restart" class="button" onclick="restart()">
+                    restart
+                </button>
+            </div>
+            <div id="imageContainer">
+
+                <div id="div_ice">
+                    <div class="box1">
+                        <img src="oddOneOutComponents/ice2.png" class="ice">
+                        <img src="oddOneOutComponents/ice2.png" class="ice">
+                        <img src="oddOneOutComponents/ice2.png" class="ice">
+                        <img src="oddOneOutComponents/ice2.png" class="ice">
+                    </div>
+                    <div class="box1">
+                        <img src="oddOneOutComponents/ice2.png" class="ice">
+                        <img src="oddOneOutComponents/ice1.png" class="ice" id="ice_unique" value="1">
+                        <img src="oddOneOutComponents/ice2.png" class="ice">
+                        <img src="oddOneOutComponents/ice2.png" class="ice">
+                    </div>
+                    <div class="box1">
+                        <img src="oddOneOutComponents/ice2.png" class="ice">
+                        <img src="oddOneOutComponents/ice2.png" class="ice">
+                        <img src="oddOneOutComponents/ice2.png" class="ice">
+                        <img src="oddOneOutComponents/ice2.png" class="ice">
+                    </div>
+                </div>
+
+                <div id="div_flower">
+                    <div class="box2">
+                        <img src="oddOneOutComponents/flower1.png" class="flower">
+                        <img src="oddOneOutComponents/flower1.png" class="flower">
+                        <img src="oddOneOutComponents/flower1.png" class="flower">
+                        <img src="oddOneOutComponents/flower1.png" class="flower">
+                        <img src="oddOneOutComponents/flower1.png" class="flower">
+                    </div>
+                    <div class="box2">
+                        <img src="oddOneOutComponents/flower1.png" class="flower">
+                        <img src="oddOneOutComponents/flower1.png" class="flower">
+                        <img src="oddOneOutComponents/flower1.png" class="flower">
+                        <img src="oddOneOutComponents/flower1.png" class="flower">
+                        <img src="oddOneOutComponents/flower1.png" class="flower">
+                    </div>
+                    <div class="box2">
+                        <img src="oddOneOutComponents/flower1.png" class="flower">
+                        <img src="oddOneOutComponents/flower1.png" class="flower">
+                        <img src="oddOneOutComponents/flower1.png" class="flower">
+                        <img src="oddOneOutComponents/flower1.png" class="flower">
+                        <img src="oddOneOutComponents/flower2.png" class="flower" id="flower_unique" value="2">
+                    </div>
+                    <div class="box2">
+                        <img src="oddOneOutComponents/flower1.png" class="flower">
+                        <img src="oddOneOutComponents/flower1.png" class="flower">
+                        <img src="oddOneOutComponents/flower1.png" class="flower">
+                        <img src="oddOneOutComponents/flower1.png" class="flower">
+                        <img src="oddOneOutComponents/flower1.png" class="flower">
+                    </div>
+                </div>
+
+                <div id="div_hat">
+                    <div class="box3">
+                        <img src="oddOneOutComponents/hat.png" class="hat">
+                        <img src="oddOneOutComponents/hat.png" class="hat">
+                        <img src="oddOneOutComponents/hat.png" class="hat">
+                        <img src="oddOneOutComponents/hat.png" class="hat">
+                        <img src="oddOneOutComponents/hat.png" class="hat">
+                    </div>
+                    <div class="box3">
+                        <img src="oddOneOutComponents/hat.png" class="hat">
+                        <img src="oddOneOutComponents/hat.png" class="hat">
+                        <img src="oddOneOutComponents/hat.png" class="hat">
+                        <img src="oddOneOutComponents/hat.png" class="hat">
+                        <img src="oddOneOutComponents/hat.png" class="hat">
+                    </div>
+                    <div class="box3">
+                        <img src="oddOneOutComponents/hat.png" class="hat">
+                        <img src="oddOneOutComponents/hat1.png" class="hat" id="hat_unique" value="3">
+                        <img src="oddOneOutComponents/hat.png" class="hat">
+                        <img src="oddOneOutComponents/hat.png" class="hat">
+                        <img src="oddOneOutComponents/hat.png" class="hat">
+                    </div>
+                    <div class="box3">
+                        <img src="oddOneOutComponents/hat.png" class="hat">
+                        <img src="oddOneOutComponents/hat.png" class="hat">
+                        <img src="oddOneOutComponents/hat.png" class="hat">
+                        <img src="oddOneOutComponents/hat.png" class="hat">
+                        <img src="oddOneOutComponents/hat.png" class="hat">
+                    </div>
+                    <div class="box3">
+                        <img src="oddOneOutComponents/hat.png" class="hat">
+                        <img src="oddOneOutComponents/hat.png" class="hat">
+                        <img src="oddOneOutComponents/hat.png" class="hat">
+                        <img src="oddOneOutComponents/hat.png" class="hat">
+                        <img src="oddOneOutComponents/hat.png" class="hat">
+                    </div>
+
+                </div>
+
+                <div id="div_bus">
+                    <div class="box4">
+                        <img src="oddOneOutComponents/bus.png" class="bus">
+                        <img src="oddOneOutComponents/bus.png" class="bus">
+                        <img src="oddOneOutComponents/bus.png" class="bus">
+                        <img src="oddOneOutComponents/bus.png" class="bus">
+                        <img src="oddOneOutComponents/bus.png" class="bus">
+                    </div>
+                    <div class="box4">
+                        <img src="oddOneOutComponents/bus.png" class="bus">
+                        <img src="oddOneOutComponents/bus.png" class="bus">
+                        <img src="oddOneOutComponents/bus.png" class="bus">
+                        <img src="oddOneOutComponents/bus.png" class="bus">
+                        <img src="oddOneOutComponents/bus.png" class="bus">
+                    </div>
+                    <div class="box4">
+                        <img src="oddOneOutComponents/bus.png" class="bus">
+                        <img src="oddOneOutComponents/bus.png" class="bus">
+                        <img src="oddOneOutComponents/bus.png" class="bus">
+                        <img src="oddOneOutComponents/bus.png" class="bus">
+                        <img src="oddOneOutComponents/bus.png" class="bus">
+                    </div>
+                    <div class="box4">
+                        <img src="oddOneOutComponents/bus.png" class="bus">
+                        <img src="oddOneOutComponents/bus1.png" class="bus" id="bus_unique" value="4">
+                        <img src="oddOneOutComponents/bus.png" class="bus">
+                        <img src="oddOneOutComponents/bus.png" class="bus">
+                        <img src="oddOneOutComponents/bus.png" class="bus">
+                    </div>
+                    <div class="box4">
+                        <img src="oddOneOutComponents/bus.png" class="bus">
+                        <img src="oddOneOutComponents/bus.png" class="bus">
+                        <img src="oddOneOutComponents/bus.png" class="bus">
+                        <img src="oddOneOutComponents/bus.png" class="bus">
+                        <img src="oddOneOutComponents/bus.png" class="bus">
+                    </div>
+                </div>
+
+                <div id="div_girl">
+                    <div class="box5">
+                        <img src="oddOneOutComponents/girl1.png" class="girl">
+                        <img src="oddOneOutComponents/girl1.png" class="girl">
+                        <img src="oddOneOutComponents/girl1.png" class="girl">
+                        <img src="oddOneOutComponents/girl1.png" class="girl">
+                        <img src="oddOneOutComponents/girl1.png" class="girl">
+                    </div>
+                    <div class="box5">
+                        <img src="oddOneOutComponents/girl1.png" class="girl">
+                        <img src="oddOneOutComponents/girl1.png" class="girl">
+                        <img src="oddOneOutComponents/girl1.png" class="girl">
+                        <img src="oddOneOutComponents/girl1.png" class="girl">
+                        <img src="oddOneOutComponents/girl1.png" class="girl">
+                    </div>
+                    <div class="box5">
+                        <img src="oddOneOutComponents/girl1.png" class="girl">
+                        <img src="oddOneOutComponents/girl1.png" class="girl">
+                        <img src="oddOneOutComponents/girl2.png" class="girl" id="girl_unique" value="5">
+                        <img src="oddOneOutComponents/girl1.png" class="girl">
+                        <img src="oddOneOutComponents/girl1.png" class="girl">
+                    </div>
+                    <div class="box5">
+                        <img src="oddOneOutComponents/girl1.png" class="girl">
+                        <img src="oddOneOutComponents/girl1.png" class="girl">
+                        <img src="oddOneOutComponents/girl1.png" class="girl">
+                        <img src="oddOneOutComponents/girl1.png" class="girl">
+                        <img src="oddOneOutComponents/girl1.png" class="girl">
+                    </div>
+                    <div class="box6">
+                        <img src="oddOneOutComponents/girl1.png" class="girl">
+                        <img src="oddOneOutComponents/girl1.png" class="girl">
+                        <img src="oddOneOutComponents/girl1.png" class="girl">
+                        <img src="oddOneOutComponents/girl1.png" class="girl">
+                        <img src="oddOneOutComponents/girl1.png" class="girl">
+                    </div>
+
+                </div>
+
+                <div id="div_emoji">
+                    
+                    <div class="box6">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+
+                    </div>
+                    <div class="box6">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+
+                    </div>
+                    <div class="box6">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+
+                    </div>
+                    <div class="box6">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+
+                    </div>
+                    <div class="box6">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji1.png" class="emoji" id="emoji_unique" value="6">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                    </div>
+                    <div class="box6">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                    </div>
+                    <div class="box6">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                        <img src="oddOneOutComponents/emoji2.png" class="emoji">
+                    </div>
+                </div>
+
+                <div id="div_doremon">
+                    <div class="box7">
+                        <img src="oddOneOutComponents/doremon1.png" class="doremon">
+                        <img src="oddOneOutComponents/doremon1.png" class="doremon">
+                        <img src="oddOneOutComponents/doremon1.png" class="doremon">
+                        <img src="oddOneOutComponents/doremon1.png" class="doremon">
+                        <img src="oddOneOutComponents/doremon1.png" class="doremon">
+
+                    </div>
+                    <div class="box7">
+                        <img src="oddOneOutComponents/doremon1.png" class="doremon">
+                        <img src="oddOneOutComponents/doremon1.png" class="doremon">
+                        <img src="oddOneOutComponents/doremon1.png" class="doremon">
+                        <img src="oddOneOutComponents/doremon1.png" class="doremon">
+                        <img src="oddOneOutComponents/doremon1.png" class="doremon">
+                    </div>
+                    <div class="box7">
+                        <img src="oddOneOutComponents/doremon1.png" class="doremon">
+                        <img src="oddOneOutComponents/doremon1.png" class="doremon">
+                        <img src="oddOneOutComponents/doremon1.png" class="doremon">
+                        <img src="oddOneOutComponents/doremon1.png" class="doremon">
+                        <img src="oddOneOutComponents/doremon1.png" class="doremon">
+                    </div>
+                    <div class="box7">
+                        <img src="oddOneOutComponents/doremon1.png" class="doremon">
+                        <img src="oddOneOutComponents/doremon1.png" class="doremon">
+                        <img src="oddOneOutComponents/doremon1.png" class="doremon">
+                        <img src="oddOneOutComponents/doremon2.png" class="doremon" id="doremon_unique">
+                        <img src="oddOneOutComponents/doremon1.png" class="doremon">
+                    </div>
+                    <div class="box7">
+                        <img src="oddOneOutComponents/doremon1.png" class="doremon">
+                        <img src="oddOneOutComponents/doremon1.png" class="doremon">
+                        <img src="oddOneOutComponents/doremon1.png" class="doremon">
+                        <img src="oddOneOutComponents/doremon1.png" class="doremon">
+                        <img src="oddOneOutComponents/doremon1.png" class="doremon">
+                    </div>
+                </div>
+
+                <div id="div_panda">
+                    <div class="box8">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                    </div>
+                    <div class="box8">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                    </div>
+                    <div class="box8">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                    </div>
+                    <div class="box8">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                    </div>
+                    <div class="box8">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda2.png" class="panda" id="panda_unique" value="8">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                    </div>
+                    <div class="box8">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                    </div>
+                    <div class="box8">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                    </div>
+                    <div class="box9">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                    </div>
+                    <div class="box10">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                        <img src="oddOneOutComponents/panda1.png" class="panda">
+                    </div>
+
+
+                </div>
+
+                <div id="div_blackBall">
+                    <div class="box9">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                    </div>
+                    <div class="box9">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                    </div>
+                    <div class="box9">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                    </div>
+                    <div class="box9">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                    </div>
+                    <div class="box9">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                    </div>
+                    <div class="box9">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall_unique.png" class="blackBall" id="blackBall_unique" value="9">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                    </div>
+                    <div class="box9">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                    </div>
+                    <div class="box9">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                    </div>
+                    <div class="box10">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                        <img src="oddOneOutComponents/blackBall.png" class="blackBall">
+                    </div>
+                </div>
+
+                <div id="div_gift">
+                    <div class="box10">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                    </div>
+                    <div class="box10">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                    </div>
+                    <div class="box10">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                    </div>
+                    <div class="box10">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+
+                    </div>
+                    <div class="box10">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift2.png" class="gift" id="gift_unique" value="10">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                    </div>
+                    <div class="box10">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                    </div>
+                    <div class="box10">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                    </div>
+                    <div class="box10">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                        <img src="oddOneOutComponents/gift1.png" class="gift">
+                    </div>
+                </div>
+
+                <div id="div_animal">
+                    <div class="box11">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                    </div>
+                    <div class="box11">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                    </div>
+                    <div class="box11">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                    </div>
+                    <div class="box11">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+
+                    </div>
+                    <div class="box11">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal_unique.png" class="animal" id="animal_unique">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                    </div>
+                    <div class="box11">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                    </div>
+                    <div class="box11">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                        <img src="oddOneOutComponents/animal.png" class="animal">
+                    </div>
+                </div>
+
+                <div id="div_ball">
+                    <div class="box_ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                    </div>
+                    <div class="box_ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                    </div>
+                    <div class="box_ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                    </div>
+                    <div class="box_ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                    </div>
+                    <div class="box_ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                    </div>
+                    <div class="box_ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                    </div>
+                    <div class="box_ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball_u.png" class="ball" id="ball_unique">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                    </div>
+
+                    <div class="box_ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                    </div>
+                    <div class="box_ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                        <img src="oddOneOutComponents/ball.png" class="ball">
+                    </div>
+
+                </div>
+
+                <div id="div_ring">
+
+                    <div class="box_ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                    </div>
+                    <div class="box_ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                    </div>
+                    <div class="box_ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                    </div>
+                    <div class="box_ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                    </div>
+                    <div class="box_ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                    </div>
+                    <div class="box_ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring_u.png" class="ring" id="ring_unique">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                    </div>
+
+                    <div class="box_ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                    </div>
+                    <div class="box_ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                        <img src="oddOneOutComponents/ring.png" class="ring">
+                    </div>
+
+                </div>
+
+                <div id="div_red">
+                    <div class="box_red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                    </div>
+                    <div class="box_red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                    </div>
+                    <div class="box_red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                    </div>
+                    <div class="box_red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                    </div>
+                    <div class="box_red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red_u.png" class="red" id="red_unique">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                    </div>
+                    <div class="box_red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                    </div>
+                    <div class="box_red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                    </div>
+
+                    <div class="box_red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                        <img src="oddOneOutComponents/red.png" class="red">
+                    </div>
+                </div>
+
+                <div id="div_purpleBall">
+                    <div class="box_purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                    </div>
+                    <div class="box_purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                    </div>
+                    <div class="box_purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                    </div>
+                    <div class="box_purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                    </div>
+                    <div class="box_purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                    </div>
+                    <div class="box_purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                    </div>
+                    <div class="box_purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall_unique.png" class="purpleBall" id="purpleBall_unique">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                    </div>
+
+                    <div class="box_purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                        <img src="oddOneOutComponents/purpleBall.png" class="purpleBall">
+                    </div>
+                </div>
+
+                <div id="div_sheep">
+                    <div class="box_sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                    </div>
+                    <div class="box_sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                    </div>
+                    <div class="box_sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                    </div>
+                    <div class="box_sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                    </div>
+                    <div class="box_sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                    </div>
+                    <div class="box_sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                    </div>
+                    <div class="box_sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep_u.png" class="sheep" id="sheep_unique">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                    </div>
+
+                    <div class="box_sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                        <img src="oddOneOutComponents/sheep.png" class="sheep">
+                    </div>
+
+
+                </div>
+                <div id="div_flower3">
+                    <div class="box_flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                    </div>
+                    <div class="box_flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                    </div>
+                    <div class="box_flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                    </div>
+                    <div class="box_flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                    </div>
+                    <div class="box_flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                    </div>
+                    <div class="box_flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3_u.png" class="flower3" id="flower3_unique">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                    </div>
+
+                    <div class="box_flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                    </div>
+                    <div class="box_flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                        <img src="oddOneOutComponents/flower3.png" class="flower3">
+                    </div>
+
+
+                </div>
+
+                <div id="div_baby">
+
+                    <div class="box_baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                    </div>
+                    <div class="box_baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                    </div>
+                    <div class="box_baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                    </div>
+                    <div class="box_baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                    </div>
+                    <div class="box_baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby_u.png" class="baby" id="baby_unique">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                    </div>
+
+                    <div class="box_baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                    </div>
+                    <div class="box_baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                        <img src="oddOneOutComponents/baby.png" class="baby">
+                    </div>
+
+
+                </div>
+
+                <div id="div_penguin">
+                    <div class="box_penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                    </div>
+                    <div class="box_penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                    </div>
+
+                    <div class="box_penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin_u.png" class="penguin" id="penguin_unique">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                    </div>
+                    <div class="box_penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                    </div>
+                    <div class="box_penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                    </div>
+                    <div class="box_penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                        <img src="oddOneOutComponents/penguin.png" class="penguin">
+                    </div>
+                </div>
+
+                <div id="div_owl">
+                    <div class="box_owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                    </div>
+                    <div class="box_owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                    </div>
+                    <div class="box_owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                    </div>
+                    <div class="box_owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                    </div>
+                    <div class="box_owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl_u.png" class="owl" id="owl_unique">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                    </div>
+                    <div class="box_owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                        <img src="oddOneOutComponents/owl.png" class="owl">
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        <div id="timeDiv">
+            <div id="timeSubDiv"></div>
+        </div>
+    </div>
+    <script src="odd_one_out.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBC</title>
+    <link rel="icon" type="image/x-icon" href="image/KBC.png">
+    <link rel="stylesheet" href="kbc_style.css">
+
+</head>
+
+<body>
+
+    <h1 class="heding">KAUN BANEGA CROREPATI</h1>
+
+    <audio id="audioPlayer">
+        <source src="audio/s_audio.mp3" type="audio/mpeg">
+
+    </audio>
+
+    <audio id="correctAnswerAudio">
+        <source src="audio/right.mp3" type="audio/mpeg">
+
+    </audio>
+
+    <audio id="wrongAnswerAudio">
+        <source src="audio/wrong.mp3" type="audio/mpeg">
+
+    </audio>
+
+    <div class="main">
+        <button class="start_btn">START KBC</button>
+        <button class="about"> ABOUT</button>
+        <button class="kbc_exit">EXIT</button>
+
+
+    </div>
+
+
+
+
+    <div class="about-r inactive">
+
+        <h1>about :</h1>
+
+        <h3>how to play :</h2>
+
+            <h3>will be asked 15 questions. </h3>
+            <h3>each question has 4 options.</h3>
+            <h3>select 1 option and go to next button for another question.</h3>
+            <h3>last result will be apperead.</h3>
+            <button class="button-a">EXIT</button>
+
+    </div>
+
+    <div class="quiz-box  inactive">
+        <div id="timer">Time Left: 00:20</div>
+        <img src="image/offaudio.jpeg" class="off inactive">
+        <img src="image/onaudio.jpeg" class="on">
+        <h1 class="question-text"> </h1>
+        <div class="options">
+            <div class="row">
+                <div class="option"></div>
+                <div class="option incorrect"></div>
+
+                <div class="row">
+                    <div class="option"></div>
+                    <div class="option correct "></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="quiz-footar">
+            <div class="footar-left">
+                <span class="count-ques"></span>of <span class="total-ques"></span> questions
+            </div>
+
+            <div class="next_btn inactive">
+                next question
+            </div>
+        </div>
+    </div>
+
+ 
+    <div class="result-box   inactive" id="r1">
+        <h2> result</h2>
+        <div class="result">
+            <h3 class="total-ques-r">total question : <span></span></h3>
+            <h3 class="right-ans-r">right answer :<span></span></h3>
+            <h3 class="wrong-ans-r">wrong answer :<span></span></h3>
+            <h3 class="rupees"> rupess : <span id="currentvalue"></span> </h3>
+        </div>
+        <div class="footer">
+            <div class="again-quiz">Again quiz</div>
+            <div class="exit">exit</div>
+        </div>
+    </div>
+
+    <div class="side-menu inactive">
+        <div class="menu-header">
+            <h2></h2>
+        </div>
+        <ul class="menu-list" id="value-menu">
+            <!-- JavaScript will populate this list dynamically -->
+        </ul>
+    </div>
+    
+    <div class="confetti-container" id="confetti-container"></div>
+
+    <script src="kbc_script.js"></script>
+
+
+
+</body>
+
+</html>

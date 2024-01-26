@@ -1,0 +1,824 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+#front_page {
+    height: 100vh;
+    width: 100vw;
+}
+
+#logo {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+#play_button,
+#about_button {
+    position: absolute;
+    top: 72%;
+    left: 14%;
+    height: 8%;
+    width: 130px;
+    background-color: rgb(214, 142, 142);
+    border: 5px solid rgb(87, 29, 29);
+    font-size: 200%;
+    font-family: Times New Roman;
+    font-weight: bold;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+#about_button {
+    top: 83%;
+}
+
+#play_button:hover,
+#about_button:hover,
+#oddOneOutCloseButton:hover {
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    transform: scale(1.2);
+}
+
+#aboutBox {
+    display: none;
+    position: absolute;
+    top: 38%;
+    left: 33%;
+    height: 45%;
+    width: 40%;
+    background-color: rgb(70, 23, 23);
+    border-radius: 30px;
+    opacity: 0.9;
+    z-index:2;
+    box-shadow: 17px 17px 18px rgba(0, 0, 0, 0.8);
+}
+
+.insideAboutDiv {
+    position: absolute;
+    font-size: 200%;
+    color: rgb(226, 226, 226);
+    text-shadow: 3px 5px 5px rgb(38, 38, 38);
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#oddOneOutCloseButton{
+    position: relative;
+    height: 13%;
+    width: 8%;
+    left: 89%;
+    top: 4%;
+}
+
+#about1 {
+    top: 1%;
+    left: 32%;
+}
+
+#about2 {
+    top: 20%;
+    left: 21%;
+}
+
+#about3 {
+    top: 47%;
+    left: 3%;
+    font-size: 180%;
+}
+
+#about_par {
+    font-size: 100%;
+    top: 65%;
+    left: 10%;
+}
+
+#main_div {
+    position: absolute;
+    top: 24%;
+    height: 73%;
+    width: 99%;
+}
+
+#gameTitleDiv {
+    position: absolute;
+    width: 100%;
+    height: 21%;
+    background-color: rgb(97, 45, 45, 0.65);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+}
+
+#game_page {
+    display: none;
+}
+
+#background_video {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+}
+
+#background_audio {
+    display: none;
+}
+
+#clickSound {
+    position: absolute;
+    display: none;
+}
+
+#imageContainer {
+    display: flex;
+    height: 60%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#audio {
+    display: none;
+}
+
+#div_flower,
+#div_hat,
+#div_bus,
+#div_girl,
+#div_emoji,
+#div_doremon,
+#div_panda,
+#div_blackBall,
+#div_ring,
+#div_animal,
+#div_ball,
+#div_gift,
+#div_red,
+#div_purpleBall,
+#div_sheep,
+#div_flower3,
+#div_baby,
+#div_penguin,
+#div_owl {
+    display: none;
+}
+
+#div_ice {
+    filter: blur(5px);
+}
+
+
+#button_div{
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; 
+    padding: 5px;
+    margin: 25px 0px;
+    margin-top: 0px;
+}
+.music {
+    z-index: 1;
+    position: absolute;
+    margin-top: 1%;
+}
+
+#oddOneOutMute {
+    height: 8%;
+    width: 4%;
+    left: 2%;
+    top: 2%;
+}
+
+#oddOneOutPlay {
+    height: 8%;
+    width: 4%;
+    left: 7%;
+    top: 2%;
+}
+
+#oddOneOutPlay:hover,#oddOneOutMute:hover {
+    border: 3px solid black;
+}
+
+.button {
+    background-color: rgb(97, 45, 45, 0.65);
+    margin: 2px;
+    position: relative;
+    font-size: 25px;
+    border-radius: 10%;
+    height: 60px;
+    color: wheat;
+    border-radius: 50px;
+    font-weight: 600;
+    width: 110px;
+    border: 3.5px solid rgb(103, 68, 68);
+}
+
+.button:hover {
+    background-color: wheat;
+    color: black;
+    transition: transform 0.5s ease;
+    transform: scale(1.1);
+}
+
+#word {
+    position: absolute;
+    top: 85%;
+    width: 100%;
+    text-align: center;
+    color: rgb(97, 45, 45, 0.65);
+    font-size: 250%;
+    font-weight: 50%;
+    margin: 0%;
+    z-index: 1;
+    text-shadow: 3px 3px 3px rgb(134, 123, 123);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.ice {
+    height: 100px;
+    width: 100px;
+}
+
+.flower {
+    height: 65px;
+    width: 65px;
+}
+
+.hat {
+    height: 50px;
+    width: 70px;
+}
+
+.bus {
+    height: 50px;
+    width: 70px;
+}
+
+.girl {
+    height: 60px;
+    width: 60px;
+}
+
+.emoji {
+    height: 40px;
+    width: 50px;
+}
+
+.panda {
+    height: 30px;
+    width: 40px;
+}
+
+.doremon {
+    height: 60px;
+    width: 60px;
+}
+
+.gift {
+    height: 36px;
+    width: 50px;
+}
+
+.blackBall {
+    height: 30px;
+    width: 40px;
+}
+
+.animal {
+    height: 38px;
+    width: 38px;
+}
+
+.ball {
+    height: 30px;
+    width: 50px;
+}
+
+.ring {
+    height: 35px;
+    width: 40px;
+}
+.red {
+    height: 35px;
+    width: 50px;
+}
+
+.purpleBall {
+    height: 35px;
+    width: 50px;
+}
+
+.sheep {
+    height: 35px;
+    width: 50px;
+}
+
+.flower3 {
+    height: 33px;
+    width: 50px;
+}
+
+.baby {
+    height: 43px;
+    width: 50px;
+}
+
+.penguin {
+    height: 50px;
+    width: 50px;
+}
+
+.owl {
+    height: 50px;
+    width: 50px;
+}
+
+#timeDiv {
+    height: 4%;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+    position: absolute;
+    top: 94%;
+    z-index: 1;
+}
+
+#timeSubDiv {
+    margin-left: 0%;
+    margin-right: 0%;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-color: rgb(97, 45, 45, 0.65);
+    animation: move_line 15s linear none 1;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes move_line {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(calc(100% - 100vw));
+    }
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 0%;
+    margin-right: 0%;
+    margin-bottom: 0%;
+    color: wheat;
+    text-shadow: 3px 5px 5px rgb(38, 38, 38);
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#circle {
+    height: 4%;
+    width: 4%;
+    margin-top: 0.5;
+}
+
+@media(max-width : 750px){
+    #aboutBox{
+        width: 65%;
+        left: 17%;
+    }
+}
+
+@media (max-width : 500px) {
+    #aboutBox{
+        width: 100%;
+        left: 0%;
+        top: 30%;
+    }
+    #circle{
+        height: 20px;
+        width: 30px;
+    }
+    .ice {
+        height: 60px;
+        width: 60px;
+    }
+
+    .flower {
+        height: 50px;
+        width: 42px;
+    }
+
+    .hat {
+        height: 30px;
+        width: 50px;
+    }
+
+    .bus {
+        height: 30px;
+        width: 50px;
+    }
+
+    .girl {
+        height: 40px;
+        width: 40px;
+    }
+
+    .emoji {
+        height: 30px;
+        width: 35px;
+    }
+
+    .panda {
+        height: 25px;
+        width: 35px;
+    }
+
+    .doremon {
+        height: 40px;
+        width: 42px;
+    }
+
+    .gift {
+        height: 33px;
+        width: 35px;
+    }
+
+    .blackBall {
+        height: 30px;
+        width: 35px;
+    }
+
+    .animal {
+        height: 30px;
+        width: 35px;
+    }
+
+    .ball {
+        height: 30px;
+        width: 35px;
+    }
+
+    .ring {
+        height: 30px;
+        width: 35px;
+    }
+    .red {
+        height: 35px;
+        width: 35px;
+    }
+
+    .purpleBall {
+        height: 35px;
+        width: 35px;
+    }
+
+    .sheep {
+        height: 35px;
+        width: 35px;
+    }
+
+    .flower3 {
+        height: 33px;
+        width: 35px;
+    }
+
+    .baby {
+        height: 40px;
+        width: 35px;
+    }
+
+    .penguin {
+        height: 50px;
+        width: 35px;
+    }
+
+    .owl {
+        height: 50px;
+        width: 35px;
+    }
+    .button{
+        height: 40px;
+        width: 85px;
+    }
+    #word {
+        top: 89%;
+        font-size: 150%;
+    }
+    #gameTitle,#level{
+        font-size: 30px;
+    }
+}
+
+@media (max-height : 500px) {
+
+    #aboutBox{
+        height: 80%;
+        top: 10%;
+        width: 70%;
+        left: 13%;
+    }
+    .button:hover {
+        transition: transform 0.5s ease;
+        transform: scale(1.1);
+    }
+    
+    #gameTitle,#level{
+        font-size: 26px;
+    }
+    .button{
+        height: 40px;
+        width: 80px;
+        font-size: 20px;
+    }
+    #circle{
+        height: 20px;
+        width: 30px;
+    }
+    #main_div{
+        top: 20%;
+    }
+    #play_button{
+        height: 40px;
+        top: 65%;
+    }
+    #about_button{
+        height: 40px;
+    }
+
+    .ice {
+        height: 50px;
+        width: 50px;
+    }
+
+    .flower {
+        height: 40px;
+        width: 45px;
+    }
+
+    .hat {
+        height: 30px;
+        width: 45px;
+    }
+
+    .bus {
+        height: 30px;
+        width: 45px;
+    }
+
+    .girl {
+        height: 30px;
+        width: 45px;
+    }
+
+    .emoji {
+        height: 20px;
+        width: 35px;
+    }
+
+    .panda {
+        height: 15px;
+        width: 30px;
+    }
+
+    .doremon {
+        height: 30px;
+        width: 40px;
+    }
+
+    .gift {
+        height: 20px;
+        width: 35px;
+    }
+
+    .blackBall {
+        height: 20px;
+        width: 30px;
+    }
+
+    .animal {
+        height: 20px;
+        width: 35px;
+    }
+
+    .ball {
+        height: 15px;
+        width: 25px;
+    }
+
+    .ring {
+        height: 20px;
+        width: 35px;
+    }
+
+    #ring_unique {
+        height: 20px;
+        width: 35px;
+    }
+
+    .red {
+        height: 20px;
+        width: 35px;
+    }
+
+    .purpleBall {
+        height: 15px;
+        width: 30px;
+    }
+
+    .sheep {
+        height: 20px;
+        width: 35px;
+    }
+
+    .flower3 {
+        height: 20px;
+        width: 35px;
+    }
+
+    .baby {
+        height: 20px;
+        width: 35px;
+    }
+
+    .penguin {
+        height: 25px;
+        width: 38px;
+    }
+
+    .owl {
+        height: 25px;
+        width: 40px;
+    }
+
+    #word {
+        top: 89%;
+        font-size: 150%;
+    }
+
+}
+@media (max-height : 380px) {
+
+    #aboutBox{
+        height: 70%;
+        top: 10%;
+        width: 70%;
+        left: 13%;
+    }
+    .button:hover {
+        transition: transform 0.5s ease;
+        transform: scale(1.1);
+    }
+    
+    #gameTitle,#level{
+        font-size: 20px;
+    }
+    .button{
+        height: 30px;
+        width: 60px;
+        font-size: 15px;
+    }
+    #circle{
+        height: 20px;
+        width: 30px;
+    }
+    #main_div{
+        top: 20%;
+    }
+    #play_button{
+        height: 40px;
+        top: 65%;
+    }
+    #about_button{
+        height: 40px;
+    }
+
+    .ice {
+        height: 50px;
+        width: 50px;
+    }
+
+    .flower {
+        height: 40px;
+        width: 45px;
+    }
+
+    .hat {
+        height: 30px;
+        width: 45px;
+    }
+
+    .bus {
+        height: 30px;
+        width: 45px;
+    }
+
+    .girl {
+        height: 30px;
+        width: 45px;
+    }
+
+    .emoji {
+        height: 20px;
+        width: 35px;
+    }
+
+    .panda {
+        height: 15px;
+        width: 30px;
+    }
+
+    .doremon {
+        height: 30px;
+        width: 40px;
+    }
+
+    .gift {
+        height: 20px;
+        width: 35px;
+    }
+
+    .blackBall {
+        height: 20px;
+        width: 30px;
+    }
+
+    .animal {
+        height: 20px;
+        width: 35px;
+    }
+
+    .ball {
+        height: 15px;
+        width: 25px;
+    }
+
+    .ring {
+        height: 20px;
+        width: 35px;
+    }
+
+    #ring_unique {
+        height: 20px;
+        width: 35px;
+    }
+
+    .red {
+        height: 20px;
+        width: 35px;
+    }
+
+    .purpleBall {
+        height: 15px;
+        width: 30px;
+    }
+
+    .sheep {
+        height: 20px;
+        width: 35px;
+    }
+
+    .flower3 {
+        height: 20px;
+        width: 35px;
+    }
+
+    .baby {
+        height: 20px;
+        width: 35px;
+    }
+
+    .penguin {
+        height: 25px;
+        width: 38px;
+    }
+
+    .owl {
+        height: 25px;
+        width: 40px;
+    }
+
+    #word {
+        top: 89%;
+        font-size: 150%;
+    }
+
+}
+
+@media(max-width : 700px)
+{
+    #aboutBox{
+        width: 100%;
+        left: 0%;
+        top: 30%;
+    }
+}

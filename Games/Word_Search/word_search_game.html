@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Search</title>
+    <link rel="icon" type="image/x-icon" href="WordSearchImage/Word Search.png">
+    <link rel="stylesheet" href="word_search_game.css">
+</head>
+
+<body>
+    <div id="word_search_first_page" class="word_search_about">
+
+        <h1 id="word_search_name">WORD SEARCH</h1>
+
+        <p>RULES:</p>
+        <p>
+            1.Words could be displayed vertically,horizontally or diagonally.
+        </p>
+
+        <p>
+            2.To select the letters, select the letters in correct order and then press ctrl key.
+        </p>
+
+        <button id="word_search_game_start" class="word_search_game_button">Start Game</button>
+
+    </div>
+
+    <div class="container">
+
+        <div id="word_search_score_div">
+            <p id="highscore"></p>
+            <p id="score">Score : 0</p>
+        </div>
+
+        <div id="hint"></div>
+        <div id="letters"></div>
+        <button id="nextLevel" class="word_search_game_button">Next Level</button>
+        <button id="ctrlKey" class="word_search_game_button">ctrl</button>
+
+       
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- <script src="JQuery Files/jquery-3.6.4.min.js"></script> -->
+    <script src="word_search_game_final.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hungry Snake Game</title>
+    <link rel="icon" type="image/x-icon" href="snake_game/Hungry Snake.jpg">
+    <link rel="stylesheet" href="snake_style.css">
+</head>
+
+<body>
+    <div id="snake_first_page">
+
+        <h1 id="snake_game_name">HUNGRY SNAKE</h1>
+
+        <button id="snake_game_start" class="snake_game_button">Start Game</button>
+        <button id="snake_game_about" class="snake_game_button">About Us</button>
+        <button id="snake_game_setting" class="snake_game_button">settings</button>
+        <button id="snake_game_quit" class="snake_game_button">Quit</button>
+
+    </div>
+    <div class="snake_about snake_about_r">
+
+        <h1>About Us:</h1>
+
+        <h2>how to play :</h2>
+
+        <h3>Use the arrow keys on your keyboard (or swipe on mobile devices) to control the snake’s movement. The
+            objective is to eat the fruits and grow your snake.
+
+            Be careful not to hit the walls or the snake’s own body, as it will result in game over.
+
+            As you eat more fruits, your snake will grow longer.</h3>
+        <button class="exit_button">EXIT</button>
+
+    </div>
+
+
+    <div class="snake_setting snake_setting_r">
+        <img src="snake_game/on.png" id="on_music" class="snake_music">
+        <img src="snake_game/off.png" id="off_music" class="snake_music">
+        
+        <button class="exit_button">EXIT</button>
+    </div>
+
+    <canvas id="canvas"></canvas>
+    <script src="index.js"></script>
+
+    <div>
+        <canvas id="canvas_1"></canvas>
+        <img src="snake_game/snake_UpKey.png" id="snake_UpKey_button" class="snake_button">
+        <img src="snake_game/snake_DownKey.png" id="snake_DownKey_button" class="snake_button">
+        <img src="snake_game/snake_LeftKey.png" id="snake_LeftKey_button" class="snake_button">
+        <img src="snake_game/snake_RightKey.png" id="snake_RightKey_button" class="snake_button">
+        <button id="snake_exit_button" class="snake_button">EXIT</button>
+      
+    </div>
+
+</body>
+
+</html>

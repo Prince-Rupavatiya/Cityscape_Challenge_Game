@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            width: 100vw;
+        }
+        .container{
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            background-color: rgb(88, 86, 86);
+            filter: blur(10px);
+        }
+        #missionPassed{
+            color: orange;
+            position: fixed;
+            top: 40%;
+            left: 30%;
+            font-size: 500%;
+            font-family: cursive;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    </div>
+    <p id="missionPassed"> Mission Passed </p>
+</body>
+</html>
